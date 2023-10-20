@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Товары и точка</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__menu"></div>
+        <img class="header__logo" src="/images/logo.svg" alt="Логотип">
+        <img class="header__logo-mobile" src="/images/logo-mobile.svg" alt="Логотип">
+        <form class="header__form">
+          <input class="header__search" placeholder="Я ищу..." type="text" />
+          <button class="header__search-button"></button>
+        </form>
+        <div class="header__profile-block">
+          <img
+            class="header__profile-icon"
+            src="/images/profile-icon.svg"
+            alt="Иконка профиля"
+          />
+          <p class="header__profile-text">Профиль</p>
+        </div>
+        <div class="header__basket-block">
+          <img
+            class="header__basket-icon"
+            src="/images/basket-icon.svg"
+            alt="Иконка корзины"
+          />
+          <p class="header__basket-text">Корзина</p>
+          <p class="header__basket-count">3</p>
+        </div>
+      </header>
+      <main class="main">
+        <div class="left-part">
+          <section class="basket">
+            <h2 class="basket__title">Корзина</h2>
+            <div class="basket__head-container">
+              <div class="checkbox checkbox_choose-all">
+                <input class="basket__input" type="checkbox" id="checkbox1"/>
+                <label class="checkbox-label" for="checkbox1">Выбрать&nbsp;все</label>
+              </div>
+              <button class="basket__minimize-button"></button>
+            </div>
+            <ul class="basket__elements" style="list-style-type: none">
+            </ul>
+          </section>
+          <section class="missing-items">
+            <div class="missing-items__head-container">
+              <h3 class="missing-items__title">Отсутствуют · 3 товара</h3>
+              <button class="missing-items__minimize-button"></button>
+            </div>
+            <hr class="missing-items__stroke" />
+            <ul class="missing-items__elements">
+              <li class="missing-items__element">
+                <div class="missing-items__element-left-container">
+                  <img
+                    class="missing-items__element-img"
+                    src="/images/t-shirt.jpg"
+                    alt="t-short"
+                  />
+                  <div class="missing-items__element-description-container">
+                    <a
+                      class="missing-items__element-name"
+                      clas
+                      href="https://www.wildberries.ru/catalog/54192797/detail.aspx"
+                      target="_blank"
+                      >Футболка UZcotton мужская
+                    </a>
+                    <div class="missing-items__element-info-block">
+                      <p class="missing-items__element-info missing-items__element-info-colour">Цвет: белый</p>
+                      <p class="missing-items__element-info missing-items__element-info-size">Размер: 56</p>
+                      <span class="missing-items__element-info-size-mobile">56</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="missing-items__element-right-container">
+                  <div class="missing-items__element-edit-container">
+                    <div class="missing-items__element-add-delete-container">
+                      <button class="missing-items__element-like-button"></button>
+                      <button class="missing-items__element-delete-button"></button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="missing-items__element">
+                <div class="missing-items__element-left-container">
+                  <img
+                    class="missing-items__element-img"
+                    src="/images/iphone-case.jpg"
+                    alt="t-short"
+                  />
+                  <div class="missing-items__element-description-container">
+                    <a
+                      class="missing-items__element-name"
+                      clas
+                      href="https://www.wildberries.ru/catalog/54192797/detail.aspx"
+                      target="_blank"
+                      >Силиконовый чехол кардхолдер (отверстия) для карт, 
+                      прозрачный кейс бампер на Apple iPhone XR, 
+                      MobiSafe
+                    </a>
+                    <div class="missing-items__element-info-block">
+                      <p class="missing-items__element-info">Цвет: прозрачный</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="missing-items__element-right-container">
+                  <div class="missing-items__element-edit-container">
+                    <div class="missing-items__element-add-delete-container">
+                      <button class="missing-items__element-like-button"></button>
+                      <button class="missing-items__element-delete-button"></button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="missing-items__element">
+                <div class="missing-items__element-left-container">
+                  <img
+                    class="missing-items__element-img"
+                    src="/images/colour-pencils.jpg"
+                    alt="t-short"
+                  />
+                  <div class="missing-items__element-description-container">
+                    <a
+                      class="missing-items__element-name"
+                      clas
+                      href="https://www.wildberries.ru/catalog/54192797/detail.aspx"
+                      target="_blank"
+                      >Карандаши цветные Faber-Castell "Замок", набор 24 цвета, 
+                      заточенные, шестигранные, Faber-Castell
+                    </a>
+                    <div class="missing-items__element-info-block">
+                    </div>
+                  </div>
+                </div>
+                <div class="missing-items__element-right-container">
+                  <div class="missing-items__element-edit-container">
+                    <div class="missing-items__element-add-delete-container">
+                      <button class="missing-items__element-like-button"></button>
+                      <button class="missing-items__element-delete-button"></button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="delivery">
+            <div class="delivery__head-container">
+              <h2 class="delivery__title">Способ доставки</h2>
+              <button class="change-button">Изменить</button>
+            </div>
+            <div class="delivery__point">
+              <span class="delivery__method">Пункт выдачи</span>
+              <div class="delivery__adress-container">
+                <p class="delivery__adress-name">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                <div class="delivery__time-container">
+                  <p class="delivery__rating-star"></p>
+                  <p class="delivery__time">4.99 Ежедневно с 10 до 21</p>
+                </div>
+              </div>
+            </div>
+            <div class="delivery__price-container">
+              <span class="delivery__cost">Стоимость доставки</span>
+              <p class="delivery__price">Бесплатно</p>
+            </div>
+            <div class="delivery__delivery-date-container">
+              <span class="delivery__date">5—6 февраля</span>
+              <div class="delivery__date-items-container">
+                <div class="delivery__date-item-container">
+                  <img class="delivery__date-item" src="/images/t-shirt.jpg">
+                  <span class="delivery__date-item-span">1</span>
+                </div>
+                <div class="delivery__date-item-container">
+                  <img class="delivery__date-item" src="/images/iphone-case.jpg">
+                  <span class="delivery__date-item-span">184</span>
+                </div>
+                <div class="delivery__date-item-container">
+                  <img class="delivery__date-item" src="/images/colour-pencils.jpg">
+                  <span class="delivery__date-item-span">2</span>
+                </div>
+              </div>
+            </div>
+            <div class="delivery__delivery-date-container">
+              <span class="delivery__date">7—8 февраля</span>
+              <div class="delivery__date-items-container">
+                <div class="delivery__date-item-container">
+                  <img class="delivery__date-item" src="/images/iphone-case.jpg">
+                  <span class="delivery__date-item-span">16</span>
+                </div>
+              </div>
+            </div>
+            <div class="delivery__return-conditions-container">
+              <p class="check-mark-icon"></p>
+              <p class="delivery__return-conditions">
+                Обратная доставка товаров на склад при отказе — 
+                <span class="delivery__return-conditions-span">бесплатно</span>
+              </p>
+            </div>
+          </section>
+          <section class="payment">
+            <div class="payment__header-container">
+              <h2 class="payment__title">Способ оплаты</h2>
+              <button class="change-button">Изменить</button>
+            </div>
+            <div class="payment__method-container">
+              <p class="card-icon"></p>
+              <p class="payment__card-number">1234 56•• •••• 1234</p>
+              <p class="payment__card-date">01/30</p>
+            </div>
+            <p class="payment__conditions">Спишем оплату с карты при получении</p>
+          </section>
+          <section class="recipient">
+            <h2 class="recipient__title">Получатель</h2>
+            <form class="recipient__form">
+              <div class="recipient__form-container">
+                <div class="recipient__input-block">
+                  <input placeholder="Имя" class="recipient__input recipient__name-input" type="text">
+                </div>
+                <div class="recipient__input-block">
+                  <input placeholder="Фамилия" class="recipient__input recipient__surname-input" type="text">
+                </div>
+              </div>
+              <div class="recipient__form-container">
+                <div class="recipient__input-block">
+                  <input placeholder="Почта" class="recipient__input recipient__email-input" type="email">
+                </div>
+                <div class="recipient__tel-container">
+                  <span class="recipient__telephone-span">Телефон</span>
+                  <input value="+7 988 123-45-67" class="recipient__input recipient__telephone-input" type="tel">
+                </div>
+                <div class="recipient__input-block">
+                  <input placeholder="ИНН" class="recipient__input recipient__inn-input" type="number">
+                  <span class="recipient__inn-span">Для томоженного оформления</span>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+        <div class="right-part">
+          <section class="total">
+            <div class="total_-total-price-container">
+              <p class="total__total-line">
+                <span class="total__title">Итого</span>
+                <span class="total__total-price">0 сом</span>
+              </p>
+              <p class="total__count-line">
+                <span class="total__count-line-goods">0 товаров</span>
+                <span class="total__count-line-price">0 сом</span>
+              </p>
+              <p class="total__discount-line">
+                <span>Скидка</span>
+                <span class="total__discount-line-sum">0 сом</span>
+              </p>
+              <p class="total__delivery-line">
+                <span>Доставка</span>
+                <span>Бесплатно</span>
+              </p>
+            </div>
+            <div class="total__delivery-container">
+              <div class="total__delivery-header">
+                <span class="total__delivery-title">Доставка в пункт выдачи</span>
+                <p class="edit-icon"></p>
+              </div>
+              <div class="total__delivery-adress-container">
+                <p class="total__delivery-adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                <span class="total__delivery-date">5–8 фев</span>
+              </div>
+              <div class="total__delivery-conditions-container">
+                <p class="check-mark-icon"></p>
+                <p class="total__delivery-conditions">
+                  Обратная доставка товаров на склад при отказе —
+                  <span class="total__delivery-conditions-span">бесплатно</span>
+                </p>
+              </div>
+            </div>
+            <div class="total__payment-container">
+              <div class="total__payment-header">
+                <span class="total__paymnet-title">Оплата картой</span>
+                <p class="edit-icon"></p>
+              </div>
+              <div class="total__paymnet-card-container">
+                <p class="card-icon"></p>
+                <span class="total__paymnet-card">1234 12•• •••• 1234</span>
+              </div>
+              <div class="total__paymnet-condition-container">
+                <div class="checkbox">
+                  <input class="basket__input" type="checkbox" id="checkbox6" />
+                  <label class="checkbox-label total__payment-label" for="checkbox6">Списать оплату сразу</label>
+                </div>
+                <p class="total__payment-condition">Спишем оплату с карты при получении</p>
+              </div>
+            </div>
+            <div class="total__button-container">
+              <button class="total__button">Заказать</button>
+              <div class="total__agreement-container">
+                <p class="checked-icon"></p>
+                <span class="total__agrrement">
+                  Соглашаюсь с 
+                  <a class="total__agrrement-link" href="">правилами пользования торговой площадкой</a>
+                   и 
+                   <a class="total__agrrement-link" href="">возврата</a>
+                </span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">© 2022  ООО «Товары и точка»</p>
+      </footer>
+      <template id="element">
+        <li class="basket__element">
+          <div class="basket__element-left-container">
+            <div class="checkbox checkbox_default">
+              <input class="basket__input" type="checkbox"/>
+              <label class="checkbox-label"></label>
+            </div>
+            <img
+              class="basket__element-img"
+              src="/images/t-shirt.jpg"
+              alt="t-short"
+            />
+            <div class="basket__element-description-container">
+              <a
+                class="basket__element-name"
+                href=""
+                target="_blank"
+                ></a>
+              <div class="basket__element-info-block">
+                <p class="basket__element-info basket__element-info-colour"></p>
+                <p class="basket__element-info basket__element-info-size"></p>
+                <span class="basket__element-info-size-mobile"></span>
+              </div>
+              <p class="basket__element-stock"></p>
+              <p class="basket__element-provider"></p>
+            </div>
+          </div>
+          <div class="basket__element-right-container">
+            <div class="basket__element-edit-container">
+              <div class="basket__element-counter-container">
+                <button class="basket__element-decrease-button" disabled></button>
+                <input class="basket__element-quantity"
+                  type="number"
+                  autocomplete="off"
+                  min="1"
+                  max="999"
+                  value="1"
+                />
+                <button class="basket__element-increase-button"></button>
+              </div>
+              <p class="basket__element-remainder"></p>
+              <div class="basket__element-add-delete-container">
+                <button class="basket__element-like-button"></button>
+                <button class="basket__element-delete-button"></button>
+              </div>
+            </div>
+            <div class="basket__element-price-container">
+              <p class="basket__element-new-price"><span class="basket__element-new-price-currency">сом</span></p>
+              <p class="basket__element-old-price"></span></p>
+            </div>
+          </div>
+        </li>
+      </template>
+      <div class="mobile-menu">
+        <button class="mobile-menu__home-button"></button>
+        <button class="mobile-menu__search-button"></button>
+        <button class="mobile-menu__basket-button"></button>
+        <button class="mobile-menu__favoutite-button"></button>
+        <button class="mobile-menu__account-button"></button>
+      </div>
+    </div>
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>
