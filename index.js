@@ -1,40 +1,112 @@
 import Card from "./components/Card.js";
+import MissingGood from "./components/MissingGood.js";
 import Section from "./components/Section.js";
-const chooseAllCards = document.querySelector(".checkbox-label");
-const ul = document.querySelector(".basket__elements");
-const totalPrice = document.querySelector(".total__total-price");
-const cards = [{
-  name: "Футболка UZcotton мужская",
-  link: "https://www.wildberries.ru/catalog/54192797/detail.aspx",
-  colour: "белый",
-  size: "56",
-  image: "/images/t-shirt.jpg",
-  stock: "Коледино WB",
-  provider: "ООО Вайлдберриз",
-  oldPrice: 1051,
-  newPrice: 522,
-  remainder: "2"
-},{
-  name: "Силиконовый чехол кардхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
-  link: "https://www.wildberries.ru/catalog/137598338/detail.aspx",
-  colour: "прозрачный",
-  image: "/images/iphone-case.jpg",
-  stock: "Коледино WB",
-  provider: "ООО Мегапрофстиль",
-  oldPrice: 11500,
-  newPrice: 10500
-},{
-  name: "Карандаши цветные Faber-Castell 'Замок', набор 24 цвета, заточенные, шестигранные, Faber-Castell",
-  link: "https://www.wildberries.ru/catalog/3544425/detail.aspx",
-  image: "/images/colour-pencils.jpg",
-  stock: "Коледино WB",
-  provider: "ООО Вайлдберриз",
-  oldPrice: 950,
-  newPrice: 494,
-  remainder: "2"
-}]
+import FormValidator from "./components/FormValidator.js";
+import Popup from "./components/Popup.js";
+import {cards} from "./utils/initialCards.js"
+import {
+  chooseAllCards,
+  inputFormBlocks,
+  recipientForm,
+  totalSubmitButton,
+  buttonPickup,
+  buttonCourier,
+  closePopupDeliveryButton,
+  closePopupPaymentButton,
+  deliveryChangeButton,
+  deliveryChangeButtonTotal,
+  paymentChangeButton,
+  paymentChangeButtonTotal,
+  deleteButtons,
+  pickupAdress,
+  courierAdress,
+  basketMinimizeButton,
+  missingGoodsMinimizeButton,
+  paymentLabel
+} from "./utils/constants.js"
 
-function declinationGoods(amount) {
+const validation = new FormValidator(recipientForm);
+
+const deliveryPopup = new Popup(".popup__delivery-method");
+const paymentPopup = new Popup(".popup__payment-method");
+
+// Слушатель кнопки "Выбрать" в попапе выбора способа доставки
+deliveryPopup.submitButton().addEventListener("click", () => {
+  const deliveryMethod = document.querySelector(".delivery__method");
+  const deliveryMethodTotal = document.querySelector(".total__delivery-title");
+  const deliveryAdress = document.querySelector(".delivery__adress-name");
+  const totalDeliveryAdress = document.querySelector(".total__delivery-adress");
+  const deliveryTimeContainer = document.querySelector(".delivery__time-container");
+  if(buttonPickup.classList.contains("popup__button_active")){
+    deliveryMethod.textContent = "Пункт выдачи";
+    deliveryMethodTotal.textContent = "Доставка в пункт выдачи";
+    deliveryTimeContainer.removeAttribute("style");
+    const inputs = Array.from(pickupAdress.querySelectorAll(".popup__input"));
+    inputs.forEach(input => {
+      if(input.checked){
+        const label = input.nextElementSibling;
+        deliveryAdress.textContent = label.textContent;
+        totalDeliveryAdress.textContent = label.textContent;
+      }
+    })
+  } else {
+    deliveryMethod.textContent = "Доставит курьер";
+    deliveryMethodTotal.textContent = "Доставит курьер";
+    deliveryTimeContainer.setAttribute("style","display:none");
+    const inputs = Array.from(courierAdress.querySelectorAll(".popup__input"));
+    inputs.forEach(input => {
+      if(input.checked){
+        const label = input.nextElementSibling;
+        deliveryAdress.textContent = label.textContent;
+        totalDeliveryAdress.textContent = label.textContent;
+      }
+    })
+  }
+  deliveryPopup.close();
+})
+
+// Слушатель кнопки "Выбрать" в попапе выбора карты
+paymentPopup.submitButton().addEventListener("click", () => {
+  const inputs = paymentPopup.thisPopup().querySelectorAll(".popup__input");
+  const cardNumber = document.querySelector(".payment__card-number");
+  const cardType = document.getElementById("card-icon");
+  const totalCardType = document.getElementById("card-icon-total");
+  inputs.forEach(input => {
+    if(input.checked){
+      const label = input.nextElementSibling;
+      cardNumber.textContent = label.textContent;
+      cardType.className = label.children[0].className;
+      totalCardType.className = label.children[0].className;
+    }
+  })
+  paymentPopup.close();
+})
+
+// Анимация плейсхолдеров в форме с данными покупателя
+inputFormBlocks.forEach(item => {
+  const input = item.querySelector(".recipient__input");
+  const inputLabel = item.querySelector(".recipient__input-label");
+
+  input.addEventListener("focus", function() {
+    inputLabel.style.transform = "translateY(-150%)";
+    inputLabel.style.fontSize = "0.8em";
+  });
+  
+  input.addEventListener("blur", function() {
+    if (!input.value) {
+      inputLabel.style.transform = "translateY(-50%)";
+      inputLabel.style.fontSize = "1em";
+    }
+  });
+  
+  if (input.value) {
+    inputLabel.style.transform = "translateY(-150%)";
+    inputLabel.style.fontSize = "0.8em";
+  }
+})
+
+// Функция изменения склония слова "Товар" в зависимости от количества
+const declinationGoods = (amount) => {
   const declinationOptions = ["товар", "товара", "товаров"];
 
   function declination(num, options) {
@@ -51,13 +123,15 @@ function declinationGoods(amount) {
   return amount + " " + declination(amount, declinationOptions);
 }
 
+
+// Функция изменение данных цены в элементе "Итого"
 const changePrice = () => {
+  const cardList = document.querySelector(".basket__elements");
+  const cardsArr = Array.from(cardList.querySelectorAll(".basket__element"));
   const totalPrice = document.querySelector(".total__total-price");
   const totalOldPrice = document.querySelector(".total__count-line-price");
   const totalGoods = document.querySelector(".total__count-line-goods");
   const totalDiscount = document.querySelector(".total__discount-line-sum");
-  const cardList = document.querySelector(".basket__elements");
-  const cardsArr = Array.from(cardList.querySelectorAll(".basket__element"));
   totalPrice.textContent = "0 сом";
   totalGoods.textContent = "0 товаров";
   totalOldPrice.textContent = "0 сом";
@@ -76,6 +150,30 @@ const changePrice = () => {
   });
  }
 
+// Функция изменения количества товара в корзине на иконках корзины
+ const changeAmountGoods = () => {
+  const cardList = document.querySelector(".basket__elements");
+  const cardsArr = Array.from(cardList.querySelectorAll(".basket__element"));
+  const headerBasketCounter = document.querySelector(".header__basket-count");
+  const mobileBasketCounter = document.querySelector(".mobile-menu__basket-counter");
+  headerBasketCounter.textContent = 0;
+  mobileBasketCounter.textContent = 0;
+  cardsArr.forEach(item => {
+    const counter = item.querySelector(".basket__element-quantity");
+    headerBasketCounter.textContent = Number(headerBasketCounter.textContent) + Number(counter.value);
+    mobileBasketCounter.textContent = Number(mobileBasketCounter.textContent) + Number(counter.value);
+  })
+ }
+
+// Функция изменения количества отсутствующих товаров
+ const changeAmountMissingGoods = () => {
+  const cardList = document.querySelector(".missing-items__elements");
+  const missingGoodsArr = Array.from(cardList.querySelectorAll(".missing-items__element"));
+  const missingGoodsCounter = document.querySelector(".missing-items__title");
+  missingGoodsCounter.textContent = `Отсутствуют · ${declinationGoods(missingGoodsArr.length)}`
+ }
+
+//  Функция создания карточки товара
 const createNewCard = (data) => {
   const card = new Card({
     name: data.name,
@@ -88,20 +186,43 @@ const createNewCard = (data) => {
     oldPrice: data.oldPrice, 
     newPrice: data.newPrice, 
     remainder: data.remainder
-  }, "#element", changePrice );
+  }, "#element", changePrice, changeAmountGoods);
   return card.generateCard();
 }
 
+// Функция создания карточки отсутсвующего товара
+const createNewMissingGood = (data) => {
+  const missingGood = new MissingGood({
+    name: data.name,
+    link: data.link,
+    colour: data.colour,
+    size: data.size,
+    image: data.image, 
+  }, "#element", changeAmountMissingGoods);
+  return missingGood.generateCard();
+}
+
+// Функция добавления карточек в соответсвующие блоки
 const cardList = new Section ({renderer: (item) => {
   const cardElement = createNewCard(item);
-  cardList.addItem(cardElement);
-}}, ".basket__elements");
+  const missingGoodElement = createNewMissingGood(item);
+  if(item.inStock == true){
+    cardList.addItem(cardElement, true);
+  } else if (item.inStock == false){
+    cardList.addItem(missingGoodElement, false);
+  }
+}}, ".basket__elements", ".missing-items__elements");
 
+// Рендер карточек
 cardList.renderItems(cards);
+changeAmountGoods();
+changePrice();
+changeAmountMissingGoods();
 
-const cardsArr = Array.from(ul.querySelectorAll(".basket__element"));
-
+// Слушатель кнопки "Выбрать все"
 chooseAllCards.addEventListener("click", () => {
+  const cardList = document.querySelector(".basket__elements");
+  const cardsArr = Array.from(cardList.querySelectorAll(".basket__element"));
   const input = document.getElementById("checkbox1");
   if(!input.checked){
     cardsArr.forEach(item => {
@@ -115,4 +236,117 @@ chooseAllCards.addEventListener("click", () => {
     })
   }
   changePrice();
+})
+
+// Слушатель сабмита формы с данными покупателя
+recipientForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  validation.enableValidation();
+})
+
+// Слушатель клика по кнопке Оформления заказа
+totalSubmitButton.addEventListener("click", () => {
+  validation.enableValidation();
+  if(!totalSubmitButton.disabled){
+    alert("форма отправлена");
+  }
+})
+
+// Слушатель кнопки "Списать оплату сразу"
+paymentLabel.addEventListener("click", () => {
+  const input = document.getElementById("checkbox6");
+  const price = document.querySelector(".total__total-price");
+  if(!input.checked){
+    totalSubmitButton.textContent = `Оплатить ${price.textContent}`;
+  } else {
+    totalSubmitButton.textContent = "Заказать"
+  }
+})
+
+// Слушатель свертывания блока с товарами
+basketMinimizeButton.addEventListener("click", () => {
+  const goodsList = document.querySelector(".basket__elements");
+  const basketTotalMinimize = document.querySelector(".basket__total-goods");
+  const cardList = document.querySelector(".basket__elements");
+  const cardsArr = Array.from(cardList.querySelectorAll(".basket__element"));
+  goodsList.classList.toggle("basket__elements_collapsed");
+  basketMinimizeButton.classList.toggle("basket__minimize-button_rotated");
+  chooseAllCards.classList.toggle("checkbox_hide");
+  basketTotalMinimize.textContent = "";
+  let counter = 0;
+  let price = 0;
+  cardsArr.forEach(card => {
+    const goodCounter = card.querySelector(".basket__element-quantity");
+    const goodPrice = card.querySelector(".basket__element-new-price");
+    counter += Number(goodCounter.value);
+    price += Number(goodPrice.textContent.slice(0,-3));
+    basketTotalMinimize.textContent = declinationGoods(counter) + " · " + price + " сом";
+  })
+  basketTotalMinimize.classList.toggle("basket__total-goods_hide");
+})
+
+// Слушатель свертывания блока с отсутсвующими товарами
+missingGoodsMinimizeButton.addEventListener("click", () => {
+  const missingGoodsList = document.querySelector(".missing-items__elements");
+  missingGoodsList.classList.toggle("missing-items__elements_collapsed");
+  missingGoodsMinimizeButton.classList.toggle("missing-items__minimize-button_rotated");
+})
+
+// Слушатель кнопки "Пункт выдачи" в попапе доставки
+buttonPickup.addEventListener("click", () => {
+  pickupAdress.classList.remove("popup__pickup-adress-container_hide");
+  courierAdress.classList.add("popup__courier-adress-container_hide");
+  buttonPickup.classList.add("popup__button_active");
+  buttonCourier.classList.remove("popup__button_active");
+})
+
+// Слушатель кнопки "Курьером" в попапе доставки
+buttonCourier.addEventListener("click", () => {
+  courierAdress.classList.remove("popup__courier-adress-container_hide");
+  pickupAdress.classList.add("popup__pickup-adress-container_hide");
+  buttonCourier.classList.add("popup__button_active");
+  buttonPickup.classList.remove("popup__button_active");
+})
+
+// Слушатель кнопки закрытия попапа доставки
+closePopupDeliveryButton.addEventListener("click", () => {
+  deliveryPopup.close();
+})
+
+// Слушатель кнопки закрытия попапа оплаты
+closePopupPaymentButton.addEventListener("click", () => {
+  paymentPopup.close();
+})
+
+// Слушатель кнопки открытия попапа доставки
+deliveryChangeButton.addEventListener("click", () => {
+  deliveryPopup.open();
+})
+
+// Слушатель кнопки открытия попапа доставки
+deliveryChangeButtonTotal.addEventListener("click", () => {
+  deliveryPopup.open();
+})
+
+// Слушатель кнопки открытия попапа оплаты
+paymentChangeButton.addEventListener("click", () => {
+  paymentPopup.open();
+})
+
+// Слушатель кнопки открытия попапа оплаты
+paymentChangeButtonTotal.addEventListener("click", () => {
+  paymentPopup.open();
+})
+
+// Слушатель кнопки удаления адреса в попапе доставки
+deleteButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const parentBlock = button.parentElement;
+    const input = parentBlock.querySelector(".popup__input");
+    if(!input.checked){
+      parentBlock.remove();
+    } else {
+      alert("Вы не можете удалить выбранный адрес")
+    }
+  })
 })

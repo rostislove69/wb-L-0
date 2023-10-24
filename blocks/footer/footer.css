@@ -1,0 +1,19 @@
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.footer__text{
+  color: white;
+  opacity: 0.7;
+  font-size: 13px;
+  letter-spacing: 0.35px;
+}
+
+@media screen and (max-width: 800px) {
+  .footer{
+    margin-bottom: 50px;
+  }
+}

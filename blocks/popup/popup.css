@@ -1,0 +1,216 @@
+.popup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.popup_hide{
+  display: none;
+}
+
+.popup__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  min-width: 400px;
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
+  padding: 15px 20px 25px 25px;
+}
+
+.popup__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup__button-close{
+  background-image: url(../../images/close-icon.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.popup__button-block{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup__pickup-button{
+  width: 220px;
+  height: 35px;
+  border-radius: 20px;
+  border: 2px rgba(203, 17, 171, 0.15) solid;
+  background-color: white;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.popup__courier-button{
+  width: 220px;
+  height: 35px;
+  border-radius: 20px;
+  border: 2px rgba(203, 17, 171, 0.15) solid;
+  background-color: white;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.popup__button_active{
+  border: 2px rgba(203, 17, 171, 1) solid;
+}
+
+.popup__form-title{
+  margin-top: 25px;
+  font-size: 13px;
+}
+
+.popup__input-block{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.popup__input-block input{
+  margin-right: 5px;
+}
+
+.popup__delete-adress-button{
+  width: 15px;
+  height: 17px;
+  background-image: url(../../images/delete-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.popup__delete-adress-button:hover{
+  background-image: url(../../images/hover-delete-icon.svg);
+}
+
+.popup__pickup-adress-container_hide{
+  display: none;
+}
+
+.popup__courier-adress-container_hide{
+  display: none;
+}
+
+.popup__submit-button{
+  cursor: pointer;
+  width: 165px;
+  height: 45px;
+  background-color: #CB11AB;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup__submit-button:hover{
+  opacity: 0.8;
+}
+
+.popup__input{
+  display: flex;
+  align-items: baseline;
+  appearance: none;
+  position: absolute;
+}
+
+.radio-label{
+  display: flex;
+  width: 400px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.21px;
+  padding-left: 30px;
+}
+
+.radio-label::before{
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 1px;
+  left: -1px;
+  z-index: 1;
+}
+
+.radio-label:hover::before{
+  border: 1px solid rgba(128, 128, 128, 1);
+}
+
+.popup__input:checked + .radio-label::before{
+  width: 7px;
+  height: 7px;
+  border: 5px #CB11AB solid;
+}
+
+@media screen and (max-width: 550px) {
+  .popup__container{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .popup__button-block{
+    width: 100%;
+  }
+
+  .popup__pickup-button{
+    width: 150px;
+    margin-left: 10px;
+  }
+
+  .popup__courier-button{
+    width: 150px;
+    margin-right: 10px;
+  }
+
+  .radio-label{
+    width: 80%;
+  }
+
+  .popup__delete-adress-button{
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .checkbox{
+    width: 80%;
+  }
+
+  .popup__submit-button{
+    width: 100%;
+  }
+}

@@ -1,0 +1,288 @@
+.total{
+  position: sticky;
+  top: 10px;
+  padding: 10px 0 22px 0;
+  margin: 7px 0 0 0;
+  background-color: white;
+  border-radius: 15px;
+  width: 30.5vw;
+  min-width: 432px;
+  max-width: 432px;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1240px) {
+  .total{
+    width: 10vw;
+    max-width: 340px;
+    min-width: 307px;
+    padding-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .total{
+    width: 100%;
+    max-width: 1000px;
+    min-width: 307px;
+    padding-bottom: 35px;
+    border: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+@media screen and (max-width: 800px){
+  .total{
+    position: relative;
+  }
+}
+
+.total_-total-price-container{
+  margin: 5px 25px 0 23px;
+}
+
+.total__total-line{
+  display: flex; 
+  justify-content: space-between;
+}
+
+.total__title{
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.total__total-price{
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+@media screen and (max-width: 800px){
+  .total__title{
+    font-size: 20px;
+  }
+  .total__total-price{
+    font-size: 20px;
+  }
+}
+
+.total__count-line{
+  margin-top: 9px;
+  display: flex; 
+  justify-content: space-between;
+}
+
+.total__discount-line{
+  margin-top: 4px;
+  display: flex; 
+  justify-content: space-between;
+}
+
+.total__delivery-line{
+  margin-top: 3px;
+  display: flex; 
+  justify-content: space-between;
+}
+
+.total__delivery-container{
+  margin: 25px 25px 0 23px;
+}
+
+.total__delivery-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 800px){
+  .total__delivery-header{
+    display: none;
+  }
+}
+
+.total__delivery-title{
+font-weight: 700;
+}
+
+.edit-icon{
+  width: 25px;
+  height: 25px;
+  background-image: url(../../images/edit-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.edit-icon:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.total__delivery-adress{
+  font-size: 13px;
+  margin: 2px 0 0 1px;
+}
+
+.total__delivery-date{
+  font-size: 13px;
+  color: #CB11AB;
+  border-bottom: 1px rgba(0, 0, 0, 0.1) dashed;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px){
+  .total__delivery-adress-container{
+    display: none;
+  }
+}
+
+.total__delivery-conditions-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0 0 0;
+  background-color: #F6F6FA;
+  border-radius: 8px;
+  padding: 10px 10px 10px 11px;
+}
+
+@media screen and (max-width: 1024px) {
+  .total__delivery-conditions-container{
+    justify-content: flex-start;
+    background-color: #F0ECF4;
+  }
+}
+
+.total__delivery-conditions{
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.total__delivery-conditions-span{
+  color: #0CB477;
+  border-bottom: 1px rgba(0, 0, 0, 0.1) dashed;
+  cursor: pointer;
+}
+
+.total__payment-container{
+  margin: 25px 25px 0 23px;
+}
+
+.total__payment-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 800px){
+  .total__payment-header{
+    display: none;
+  }
+}
+
+.total__payment-title{
+  font-weight: 700;
+}
+
+.total__payment-card-container{
+  margin: 3px 0 0 3px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px){
+  .total__payment-card-container{
+    display: none;
+  }
+}
+
+.total__payment-card{
+  font-size: 13px;
+}
+
+.total__payment-condition-container{
+  position: relative;
+  margin: 12px 0 0 0;
+  background-color: #F6F6FA;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .total__payment-condition-container{
+    background-color: #F0ECF4;
+  }
+}
+
+.total__payment-checkbox{
+  margin: 20px;
+}
+
+.total__payment-label{
+  font-size: 13px;
+  margin-left: -3px;
+}
+
+.total__payment-condition{
+  margin: 9px 0 0 -2px;
+  font-size: 13px;
+}
+
+.total__button-container{
+  margin: 25px 25px 0 23px;
+}
+
+.total__button{
+  width: 100%;
+  height: 45px;
+  color: white;
+  font-size: 15px;
+  line-height: 5px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  background-color: #CB11AB;
+  border: none;
+  border-radius: 9px;
+}
+
+.total__button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.total__agreement-container{
+  margin-top: 8px;
+  display: flex;
+}
+
+.checked-icon{
+  width: 25px;
+  height: 25px;
+  background-image: url(../../images/checked-icon-black.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 2px;
+}
+
+.total__agreement{
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+@media screen and (max-width: 1240px) {
+  .total__agreement{
+    width: 210px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .total__agreement{
+    width: 100%;
+  }
+}
+
+.total__agreement-link{
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+}

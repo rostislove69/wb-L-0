@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Товары и точка</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <div class="page">
@@ -15,7 +15,7 @@
         <img class="header__logo-mobile" src="/images/logo-mobile.svg" alt="Логотип">
         <form class="header__form">
           <input class="header__search" placeholder="Я ищу..." type="text" />
-          <button class="header__search-button"></button>
+          <button class="header__search-button" type="button"></button>
         </form>
         <div class="header__profile-block">
           <img
@@ -41,118 +41,29 @@
             <h2 class="basket__title">Корзина</h2>
             <div class="basket__head-container">
               <div class="checkbox checkbox_choose-all">
-                <input class="basket__input" type="checkbox" id="checkbox1"/>
+                <input class="basket__input" type="checkbox" id="checkbox1" checked/>
                 <label class="checkbox-label" for="checkbox1">Выбрать&nbsp;все</label>
+                <p class="basket__total-goods basket__total-goods_hide"></p>
               </div>
               <button class="basket__minimize-button"></button>
             </div>
-            <ul class="basket__elements" style="list-style-type: none">
+            <hr class="basket__stroke" />
+            <ul class="basket__elements">
             </ul>
           </section>
           <section class="missing-items">
             <div class="missing-items__head-container">
-              <h3 class="missing-items__title">Отсутствуют · 3 товара</h3>
+              <h3 class="missing-items__title"></h3>
               <button class="missing-items__minimize-button"></button>
             </div>
             <hr class="missing-items__stroke" />
             <ul class="missing-items__elements">
-              <li class="missing-items__element">
-                <div class="missing-items__element-left-container">
-                  <img
-                    class="missing-items__element-img"
-                    src="/images/t-shirt.jpg"
-                    alt="t-short"
-                  />
-                  <div class="missing-items__element-description-container">
-                    <a
-                      class="missing-items__element-name"
-                      clas
-                      href="https://www.wildberries.ru/catalog/54192797/detail.aspx"
-                      target="_blank"
-                      >Футболка UZcotton мужская
-                    </a>
-                    <div class="missing-items__element-info-block">
-                      <p class="missing-items__element-info missing-items__element-info-colour">Цвет: белый</p>
-                      <p class="missing-items__element-info missing-items__element-info-size">Размер: 56</p>
-                      <span class="missing-items__element-info-size-mobile">56</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="missing-items__element-right-container">
-                  <div class="missing-items__element-edit-container">
-                    <div class="missing-items__element-add-delete-container">
-                      <button class="missing-items__element-like-button"></button>
-                      <button class="missing-items__element-delete-button"></button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="missing-items__element">
-                <div class="missing-items__element-left-container">
-                  <img
-                    class="missing-items__element-img"
-                    src="/images/iphone-case.jpg"
-                    alt="t-short"
-                  />
-                  <div class="missing-items__element-description-container">
-                    <a
-                      class="missing-items__element-name"
-                      clas
-                      href="https://www.wildberries.ru/catalog/54192797/detail.aspx"
-                      target="_blank"
-                      >Силиконовый чехол кардхолдер (отверстия) для карт, 
-                      прозрачный кейс бампер на Apple iPhone XR, 
-                      MobiSafe
-                    </a>
-                    <div class="missing-items__element-info-block">
-                      <p class="missing-items__element-info">Цвет: прозрачный</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="missing-items__element-right-container">
-                  <div class="missing-items__element-edit-container">
-                    <div class="missing-items__element-add-delete-container">
-                      <button class="missing-items__element-like-button"></button>
-                      <button class="missing-items__element-delete-button"></button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="missing-items__element">
-                <div class="missing-items__element-left-container">
-                  <img
-                    class="missing-items__element-img"
-                    src="/images/colour-pencils.jpg"
-                    alt="t-short"
-                  />
-                  <div class="missing-items__element-description-container">
-                    <a
-                      class="missing-items__element-name"
-                      clas
-                      href="https://www.wildberries.ru/catalog/54192797/detail.aspx"
-                      target="_blank"
-                      >Карандаши цветные Faber-Castell "Замок", набор 24 цвета, 
-                      заточенные, шестигранные, Faber-Castell
-                    </a>
-                    <div class="missing-items__element-info-block">
-                    </div>
-                  </div>
-                </div>
-                <div class="missing-items__element-right-container">
-                  <div class="missing-items__element-edit-container">
-                    <div class="missing-items__element-add-delete-container">
-                      <button class="missing-items__element-like-button"></button>
-                      <button class="missing-items__element-delete-button"></button>
-                    </div>
-                  </div>
-                </div>
-              </li>
             </ul>
           </section>
           <section class="delivery">
             <div class="delivery__head-container">
               <h2 class="delivery__title">Способ доставки</h2>
-              <button class="change-button">Изменить</button>
+              <button class="delivery__change-button change-button">Изменить</button>
             </div>
             <div class="delivery__point">
               <span class="delivery__method">Пункт выдачи</span>
@@ -170,22 +81,22 @@
             </div>
             <div class="delivery__delivery-date-container">
               <span class="delivery__date">5—6 февраля</span>
-              <div class="delivery__date-items-container">
-                <div class="delivery__date-item-container">
+              <ul class="delivery__date-items-container">
+                <li class="delivery__date-item-container">
                   <img class="delivery__date-item" src="/images/t-shirt.jpg">
                   <span class="delivery__date-item-span">1</span>
-                </div>
-                <div class="delivery__date-item-container">
+                </li>
+                <li class="delivery__date-item-container">
                   <img class="delivery__date-item" src="/images/iphone-case.jpg">
                   <span class="delivery__date-item-span">184</span>
-                </div>
-                <div class="delivery__date-item-container">
+                </li>
+                <li class="delivery__date-item-container">
                   <img class="delivery__date-item" src="/images/colour-pencils.jpg">
                   <span class="delivery__date-item-span">2</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
-            <div class="delivery__delivery-date-container">
+            <div class="delivery__delivery-date-container-late">
               <span class="delivery__date">7—8 февраля</span>
               <div class="delivery__date-items-container">
                 <div class="delivery__date-item-container">
@@ -205,10 +116,10 @@
           <section class="payment">
             <div class="payment__header-container">
               <h2 class="payment__title">Способ оплаты</h2>
-              <button class="change-button">Изменить</button>
+              <button class="payment__change-button change-button">Изменить</button>
             </div>
             <div class="payment__method-container">
-              <p class="card-icon"></p>
+              <p class="mir-card-icon" id="card-icon"></p>
               <p class="payment__card-number">1234 56•• •••• 1234</p>
               <p class="payment__card-date">01/30</p>
             </div>
@@ -216,26 +127,34 @@
           </section>
           <section class="recipient">
             <h2 class="recipient__title">Получатель</h2>
-            <form class="recipient__form">
+            <form class="recipient__form" id="recipient-form">
               <div class="recipient__form-container">
                 <div class="recipient__input-block">
-                  <input placeholder="Имя" class="recipient__input recipient__name-input" type="text">
+                  <input class="recipient__input" id="input-name" type="text" required>
+                  <label for="input-name" class="recipient__input-label">Имя</label>
+                  <span class="recipient__input-error input-name-error"></span>
                 </div>
                 <div class="recipient__input-block">
-                  <input placeholder="Фамилия" class="recipient__input recipient__surname-input" type="text">
+                  <input class="recipient__input" id="input-surname" type="text" required>
+                  <label for="input-surname" class="recipient__input-label">Фамилия</label>
+                  <span class="recipient__input-error input-surname-error"></span>
                 </div>
               </div>
               <div class="recipient__form-container">
                 <div class="recipient__input-block">
-                  <input placeholder="Почта" class="recipient__input recipient__email-input" type="email">
-                </div>
-                <div class="recipient__tel-container">
-                  <span class="recipient__telephone-span">Телефон</span>
-                  <input value="+7 988 123-45-67" class="recipient__input recipient__telephone-input" type="tel">
+                  <input class="recipient__input" id="input-email" type="email" required>
+                  <label for="input-email" class="recipient__input-label">Почта</label>
+                  <span class="recipient__input-error input-email-error"></span>
                 </div>
                 <div class="recipient__input-block">
-                  <input placeholder="ИНН" class="recipient__input recipient__inn-input" type="number">
-                  <span class="recipient__inn-span">Для томоженного оформления</span>
+                  <input class="recipient__input" value="+7 988 123-45-67" id="input-telephone" type="tel" required>
+                  <label for="input-telephone" class="recipient__input-label">Телефон</label>
+                  <span class="recipient__input-error input-telephone-error"></span>
+                </div>
+                <div class="recipient__input-block">
+                  <input class="recipient__input" id="input-inn" type="number" required>
+                  <label for="input-inn" class="recipient__input-label">ИНН</label>
+                  <span class="recipient__input-error input-inn-error"></span>
                 </div>
               </div>
             </form>
@@ -264,7 +183,7 @@
             <div class="total__delivery-container">
               <div class="total__delivery-header">
                 <span class="total__delivery-title">Доставка в пункт выдачи</span>
-                <p class="edit-icon"></p>
+                <p class="total__delivery-change edit-icon"></p>
               </div>
               <div class="total__delivery-adress-container">
                 <p class="total__delivery-adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
@@ -272,22 +191,19 @@
               </div>
               <div class="total__delivery-conditions-container">
                 <p class="check-mark-icon"></p>
-                <p class="total__delivery-conditions">
-                  Обратная доставка товаров на склад при отказе —
-                  <span class="total__delivery-conditions-span">бесплатно</span>
-                </p>
+                <p class="total__delivery-conditions">Обратная доставка товаров на склад при отказе — <span class="total__delivery-conditions-span">бесплатно</span></p>
               </div>
             </div>
             <div class="total__payment-container">
               <div class="total__payment-header">
-                <span class="total__paymnet-title">Оплата картой</span>
-                <p class="edit-icon"></p>
+                <span class="total__payment-title">Оплата картой</span>
+                <p class="total__payment-change edit-icon"></p>
               </div>
-              <div class="total__paymnet-card-container">
-                <p class="card-icon"></p>
-                <span class="total__paymnet-card">1234 12•• •••• 1234</span>
+              <div class="total__payment-card-container">
+                <p class="mir-card-icon" id="card-icon-total"></p>
+                <span class="total__payment-card">1234 12•• •••• 1234</span>
               </div>
-              <div class="total__paymnet-condition-container">
+              <div class="total__payment-condition-container">
                 <div class="checkbox">
                   <input class="basket__input" type="checkbox" id="checkbox6" />
                   <label class="checkbox-label total__payment-label" for="checkbox6">Списать оплату сразу</label>
@@ -296,14 +212,14 @@
               </div>
             </div>
             <div class="total__button-container">
-              <button class="total__button">Заказать</button>
+              <button type="submit" form="recipient-form" class="total__button">Заказать</button>
               <div class="total__agreement-container">
                 <p class="checked-icon"></p>
-                <span class="total__agrrement">
+                <span class="total__agreement">
                   Соглашаюсь с 
-                  <a class="total__agrrement-link" href="">правилами пользования торговой площадкой</a>
+                  <a class="total__agreement-link" target="_blank" href="https://www.wildberries.ru/services/pravila-polzovaniya-torgovoy-ploshchadkoy">правилами пользования торговой площадкой</a>
                    и 
-                   <a class="total__agrrement-link" href="">возврата</a>
+                   <a class="total__agreement-link" target="_blank" href="https://www.wildberries.ru/services/vozvrat-tovara">возврата</a>
                 </span>
               </div>
             </div>
@@ -317,7 +233,7 @@
         <li class="basket__element">
           <div class="basket__element-left-container">
             <div class="checkbox checkbox_default">
-              <input class="basket__input" type="checkbox"/>
+              <input class="basket__input" type="checkbox" checked/>
               <label class="checkbox-label"></label>
             </div>
             <img
@@ -337,39 +253,197 @@
                 <span class="basket__element-info-size-mobile"></span>
               </div>
               <p class="basket__element-stock"></p>
-              <p class="basket__element-provider"></p>
+              <div class="basket__element-provider-container">
+                <p class="basket__element-provider"></p>
+                <p class="basket__element-provider-icon"></p>
+                <div class="basket__element-provider-info-container">
+                  <p class="basket__element-provider-info-title"></p>
+                  <p class="basket__element-provider-info-ogrn"></p>
+                  <p class="basket__element-provider-info-adress"></p>
+                </div>
+              </div>
             </div>
           </div>
           <div class="basket__element-right-container">
             <div class="basket__element-edit-container">
-              <div class="basket__element-counter-container">
-                <button class="basket__element-decrease-button" disabled></button>
-                <input class="basket__element-quantity"
-                  type="number"
-                  autocomplete="off"
-                  min="1"
-                  max="999"
-                  value="1"
-                />
-                <button class="basket__element-increase-button"></button>
+              <div class="basket__mobile-flex-block">
+                <div class="basket__element-counter-container">
+                  <button class="basket__element-decrease-button basket__element-decrease-button_disabled" disabled></button>
+                  <input class="basket__element-quantity"
+                    type="number"
+                    autocomplete="off"
+                    min="1"
+                    max="999"
+                    value="1"
+                  />
+                  <button class="basket__element-increase-button"></button>
+                </div>
+                <p class="basket__element-remainder"></p>
               </div>
-              <p class="basket__element-remainder"></p>
               <div class="basket__element-add-delete-container">
                 <button class="basket__element-like-button"></button>
                 <button class="basket__element-delete-button"></button>
               </div>
             </div>
             <div class="basket__element-price-container">
-              <p class="basket__element-new-price"><span class="basket__element-new-price-currency">сом</span></p>
-              <p class="basket__element-old-price"></span></p>
+              <p class="basket__element-new-price"></p>
+              <p class="basket__element-old-price"></p>
+              <div class="basket__element-discount-container">
+                <div class="basket__element-type-discount-container">
+                  <p class="basket__element-magazine-discount"></p>
+                  <span class="basket__element-magazine-discount-sum"></span>
+                </div>
+                <div class="basket__element-type-discount-container">
+                  <p class="basket__element-buyer-discount"></p>
+                  <span class="basket__element-buyer-discount-sum"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="missing-items__element">
+          <div class="missing-items__element-left-container">
+            <img
+              class="missing-items__element-img"
+              src=""
+              alt=""
+            />
+            <div class="missing-items__element-description-container">
+              <a
+                class="missing-items__element-name"
+                clas
+                href=""
+                target="_blank"
+                ></a>
+              <div class="missing-items__element-info-block">
+                <p class="missing-items__element-info missing-items__element-info-colour"></p>
+                <p class="missing-items__element-info missing-items__element-info-size"></p>
+                <span class="missing-items__element-info-size-mobile"></span>
+              </div>
+            </div>
+          </div>
+          <div class="missing-items__element-right-container">
+            <div class="missing-items__element-edit-container">
+              <div class="missing-items__element-add-delete-container">
+                <button class="missing-items__element-like-button"></button>
+                <button class="missing-items__element-delete-button"></button>
+              </div>
             </div>
           </div>
         </li>
       </template>
+      <div class="popup popup__delivery-method popup_hide">
+        <div class="popup__container">
+          <div>
+            <div class="popup__header">
+              <h3>Способ доставки</h3>
+              <button class="popup__button-close close-delivery"></button>
+            </div>
+            <div class="popup__content">
+              <div class="popup__button-block">
+                <button class="popup__pickup-button popup__button_active">В пункт выдачи</button>
+                <button class="popup__courier-button">Курьером</button>
+              </div>
+              <form class="popup__delivery-form">
+                <h4 class="popup__form-title">Мои адреса</h4>
+                <div class="popup__pickup-adress-container">
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="pickupAddress" id="pickupAddress1" checked>
+                      <label class="radio-label" for="pickupAddress1">Бишкек, улица Ахматбека Суюмбаева, 12/1</label>
+                    </div>
+                    <button class="popup__delete-adress-button" type="button"></button>
+                  </div>
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="pickupAddress" id="pickupAddress2">
+                      <label class="radio-label" for="pickupAddress2">Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</label>
+                    </div>
+                    <button class="popup__delete-adress-button" type="button"></button>
+                  </div>
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="pickupAddress" id="pickupAddress3">
+                      <label class="radio-label" for="pickupAddress3">Бишкек, улица Табышалиева, д. 57</label>
+                    </div>
+                    <button class="popup__delete-adress-button" type="button"></button>
+                  </div>
+                  </div>
+                </div>
+                <div class="popup__courier-adress-container popup__courier-adress-container_hide">
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="deliveryAddress" id="deliveryAddress1" checked>
+                      <label class="radio-label" for="deliveryAddress1">Бишкек, улица Табышалиева, 57</label>
+                    </div>
+                    <button class="popup__delete-adress-button" type="button"></button>
+                  </div>
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="deliveryAddress" id="deliveryAddress2">
+                      <label class="radio-label" for="deliveryAddress2">Бишкек, улица Жукеева-Пудовкина, 77/1</label>
+                    </div>
+                    <button class="popup__delete-adress-button" type="button"></button>
+                  </div>
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="deliveryAddress" id="deliveryAddress3">
+                      <label class="radio-label" for="deliveryAddress3">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label>
+                    </div>
+                    <button class="popup__delete-adress-button" type="button"></button>
+                  </div>
+                </div>
+              </form>
+          </div>
+          <button class="popup__submit-button" type="button">Выбрать</button>
+        </div>
+      </div>
+      <div class="popup popup__payment-method popup_hide">
+        <div class="popup__container">
+          <div>
+            <div class="popup__header">
+              <h3>Способ оплаты</h3>
+              <button class="popup__button-close close-payment"></button>
+            </div>
+            <div class="popup__content">
+              <form class="popup__payment-form">
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="paymentMethod" id="paymentMethod1" checked>
+                      <label class="radio-label" for="paymentMethod1"><p class="mir-card-icon"></p>1234 56•• •••• 1234</label>
+                    </div>
+                  </div>
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="paymentMethod" id="paymentMethod2">
+                      <label class="radio-label" for="paymentMethod2"><p class="visa-card-icon"></p>1234 56•• •••• 1234</label>
+                    </div>
+                  </div>
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="paymentMethod" id="paymentMethod3">
+                      <label class="radio-label" for="paymentMethod3"><p class="mastercard-card-icon"></p>1234 56•• •••• 1234</label>
+                    </div>
+                  </div>
+                  <div class="popup__input-block">
+                    <div class="checkbox">
+                      <input class="popup__input" type="radio" name="paymentMethod" id="paymentMethod4">
+                      <label class="radio-label" for="paymentMethod4"><p class="maestro-card-icon"></p>1234 56•• •••• 1234</label>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+          <button class="popup__submit-button" type="button">Выбрать</button>
+        </div>
+      </div>
       <div class="mobile-menu">
         <button class="mobile-menu__home-button"></button>
         <button class="mobile-menu__search-button"></button>
-        <button class="mobile-menu__basket-button"></button>
+        <div class="mobile-menu__basket-conteiner">
+          <button class="mobile-menu__basket-button"></button>
+          <p class="mobile-menu__basket-counter">3</p>
+        </div>
         <button class="mobile-menu__favoutite-button"></button>
         <button class="mobile-menu__account-button"></button>
       </div>
