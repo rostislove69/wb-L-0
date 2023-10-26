@@ -1,6 +1,6 @@
 .recipient {
   padding-right: 30px;
-  margin: 20px 0 0 25px;
+  margin: 20px 0 20px 25px;
   background-color: white;
   max-width: 890px;
   border-radius: 15px;
@@ -89,10 +89,15 @@
     margin: 0;
   }
   .recipient__form-container:last-of-type {
+    margin-top: 15px;
     margin-bottom: 40px;
   }
 
   .recipient__input-block {
     margin-top: 50px;
+  }
+
+  .recipient__input-block:first-of-type {
+    margin-top: 30px;
   }
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Товары и точка</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./index.css">
   </head>
   <body>
     <div class="page">
@@ -162,7 +162,7 @@
         </div>
         <div class="right-part">
           <section class="total">
-            <div class="total_-total-price-container">
+            <div class="total__total-price-container">
               <p class="total__total-line">
                 <span class="total__title">Итого</span>
                 <span class="total__total-price">0 сом</span>
@@ -238,8 +238,8 @@
             </div>
             <img
               class="basket__element-img"
-              src="/images/t-shirt.jpg"
-              alt="t-short"
+              src=""
+              alt=""
             />
             <div class="basket__element-description-container">
               <a
@@ -351,6 +351,11 @@
                     <div class="checkbox">
                       <input class="popup__input" type="radio" name="pickupAddress" id="pickupAddress1" checked>
                       <label class="radio-label" for="pickupAddress1">Бишкек, улица Ахматбека Суюмбаева, 12/1</label>
+                      <div class="popup__pickup-info-container">
+                        <p class="delivery__rating-star"></p>
+                        <p class="popup__pickup-rating">4.99</p>
+                        <p>Пункт выдачи</p>
+                      </div>
                     </div>
                     <button class="popup__delete-adress-button" type="button"></button>
                   </div>
@@ -358,6 +363,11 @@
                     <div class="checkbox">
                       <input class="popup__input" type="radio" name="pickupAddress" id="pickupAddress2">
                       <label class="radio-label" for="pickupAddress2">Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</label>
+                      <div class="popup__pickup-info-container">
+                        <p class="delivery__rating-star"></p>
+                        <p class="popup__pickup-rating">4.99</p>
+                        <p>Пункт выдачи</p>
+                      </div>
                     </div>
                     <button class="popup__delete-adress-button" type="button"></button>
                   </div>
@@ -365,6 +375,11 @@
                     <div class="checkbox">
                       <input class="popup__input" type="radio" name="pickupAddress" id="pickupAddress3">
                       <label class="radio-label" for="pickupAddress3">Бишкек, улица Табышалиева, д. 57</label>
+                      <div class="popup__pickup-info-container">
+                        <p class="delivery__rating-star"></p>
+                        <p class="popup__pickup-rating">4.99</p>
+                        <p>Пункт выдачи</p>
+                      </div>
                     </div>
                     <button class="popup__delete-adress-button" type="button"></button>
                   </div>
@@ -438,14 +453,14 @@
         </div>
       </div>
       <div class="mobile-menu">
-        <button class="mobile-menu__home-button"></button>
-        <button class="mobile-menu__search-button"></button>
+        <button class="mobile-menu__home-button" type="button"></button>
+        <button class="mobile-menu__search-button" type="button"></button>
         <div class="mobile-menu__basket-conteiner">
-          <button class="mobile-menu__basket-button"></button>
+          <button class="mobile-menu__basket-button" type="button"></button>
           <p class="mobile-menu__basket-counter">3</p>
         </div>
-        <button class="mobile-menu__favoutite-button"></button>
-        <button class="mobile-menu__account-button"></button>
+        <button class="mobile-menu__favoutite-button" type="button"></button>
+        <button class="mobile-menu__account-button" type="button"></button>
       </div>
     </div>
     <script type="module" src="/index.js"></script>

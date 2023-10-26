@@ -18,6 +18,7 @@
   background-image: url(../../images/home-icom-mob.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .mobile-menu__search-button {
@@ -28,6 +29,7 @@
   background-image: url(../../images/search-mob-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .mobile-menu__basket-conteiner {
@@ -42,6 +44,7 @@
   background-image: url(../../images/basket-mob-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .mobile-menu__basket-counter {
@@ -66,6 +69,7 @@
   background-image: url(../../images/favorite-mob-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .mobile-menu__account-button {
@@ -76,6 +80,7 @@
   background-image: url(../../images/account-mob-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {

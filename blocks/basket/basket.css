@@ -142,7 +142,6 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
 .basket__element:not(:first-child) {
@@ -354,7 +353,7 @@
 
 .basket__element-add-delete-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .basket__element-like-button {
@@ -569,8 +568,7 @@
   }
 
   .basket__element-remainder {
-    margin-left: 20px;
-    margin-bottom: 7px;
+    margin-left: 10px;
   }
 
   .basket__mobile-flex-block {

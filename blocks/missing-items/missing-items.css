@@ -114,7 +114,7 @@
 
 .missing-items__element-add-delete-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin: -8px 121px 0 0;
 }
 

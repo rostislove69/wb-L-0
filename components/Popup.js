@@ -7,6 +7,7 @@ export default class Popup {
   open(){
     this._popup.classList.remove("popup_hide");
     document.addEventListener("keydown", this._handleEscClose);
+    document.body.style.overflow = "hidden";
   }
 
   close(){
