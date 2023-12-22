@@ -1,0 +1,21 @@
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.footer__text{
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 800px) {
+  .footer{
+    margin-bottom: 65px;
+  }
+}

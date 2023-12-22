@@ -1,0 +1,134 @@
+.recipient {
+  padding-right: 30px;
+  margin: 20px 0 0 25px;
+  background-color: white;
+  max-width: 890px;
+  border-radius: 15px;
+}
+
+.recipient__title {
+  padding: 10px 0 0 22px;
+}
+
+.recipient__form {
+  width: 100%;
+  max-width: 750px;
+  margin-top: 39px;
+  padding-bottom: 1px;
+}
+
+.recipient__form-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 42px 22px;
+}
+
+.recipient__input-block {
+  position: relative;
+  width: 100%;
+  margin-right: 23px;
+}
+
+.recipient__input {
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px rgba(128, 128, 128, 0.2) solid;
+}
+
+.recipient__input_error {
+  color: red;
+  border-color: red;
+}
+
+.recipient__input-label {
+  color: #9797af;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  pointer-events: none;
+  transition: transform 0.2s, font-size 0.2s;
+  transform: translateY(-50%);
+}
+
+.recipient__input:focus {
+  outline: none;
+  background-color: white;
+}
+
+.recipient__input::-webkit-inner-spin-button,
+.recipient__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.recipient__input-error {
+  color: red;
+  font-size: 12px;
+}
+
+.input-inn-span {
+  font-size: 12px;
+  color: black;
+}
+
+.input-inn-span-hide{
+  display: none;
+}
+
+@media screen and (max-width: 1240px) {
+  .recipient{
+    margin-left: 20px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .recipient{
+    width: 100%;
+    max-width: 93%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .recipient__form{
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .recipient {
+    margin: 12px 0 0 0;
+    padding-right: 30px;
+    max-width: 100%;
+    padding-bottom: 0;
+  }
+
+  .recipient__title {
+    font-size: 20px;
+    padding: 15px 0 0 15px;
+  }
+
+  .recipient__form {
+    margin: 0 15px;
+  }
+
+  .recipient__form-container {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+  .recipient__form-container:last-of-type {
+    margin-top: 22px;
+    margin-bottom: 20px;
+  }
+
+  .recipient__input-block {
+    margin-top: 49px;
+  }
+
+  .recipient__input-block:first-of-type {
+    margin-top: 27px;
+  }
+}

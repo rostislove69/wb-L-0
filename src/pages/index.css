@@ -1,0 +1,27 @@
+@import url(../vendor/fonts/fonts.css);
+
+@import url(../blocks/reset.css);
+
+@import url(../blocks/basket.css);
+
+@import url(../blocks/delivery.css);
+
+@import url(../blocks/header.css);
+
+@import url(../blocks/footer.css);
+
+@import url(../blocks/main.css);
+
+@import url(../blocks/missing-items.css);
+
+@import url(../blocks/mobile-menu.css);
+
+@import url(../blocks/page.css);
+
+@import url(../blocks/payment.css);
+
+@import url(../blocks/popup.css);
+
+@import url(../blocks/recipient.css);
+
+@import url(../blocks/total.css);
