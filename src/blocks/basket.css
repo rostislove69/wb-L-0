@@ -291,17 +291,8 @@
   cursor: pointer;
 }
 
-.basket__element-decrease-button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .basket__element-decrease-button_disabled {
   background-image: url(../images/descrease-disabled.svg);
-}
-
-.basket__element-decrease-button_disabled:hover {
-  background-color: white;
-  cursor: auto;
 }
 
 .basket__element-quantity {
@@ -337,17 +328,8 @@
   cursor: pointer;
 }
 
-.basket__element-increase-button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .basket__element-increase-button_disabled {
   background-image: url(../images/increase-disabled.svg);
-}
-
-.basket__element-increase-button_disabled:hover {
-  background-color: white;
-  cursor: auto;
 }
 
 .basket__element-remainder {
@@ -378,10 +360,6 @@
   cursor: pointer;
 }
 
-.basket__element-like-button:hover {
-  background-image: url(../images/hover-like-icon.svg);
-}
-
 .basket__element-like-button-active {
   background-image: url(../images/hover-like-icon.svg);
 }
@@ -396,10 +374,6 @@
   background-position: center;
   border: none;
   cursor: pointer;
-}
-
-.basket__element-delete-button:hover {
-  background-image: url(../images/hover-delete-icon.svg);
 }
 
 .basket__element-price-container {
@@ -497,6 +471,44 @@
 
 .basket__element-old-price:hover + .basket__element-discount-container {
   display: block;
+}
+
+@media (hover: hover) {
+  .basket__element-decrease-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .basket__element-increase-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .basket__element-like-button:hover {
+    background-image: url(../images/hover-like-icon.svg);
+  }
+  .basket__element-delete-button:hover {
+    background-image: url(../images/hover-delete-icon.svg);
+  }
+  .basket__element-increase-button_disabled:hover {
+    background-color: white;
+    cursor: auto;
+  }
+  .basket__element-decrease-button_disabled:hover {
+    background-color: white;
+    cursor: auto;
+  }
+}
+
+@media (hover: none) {
+  .basket__element-decrease-button:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .basket__element-increase-button:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .basket__element-like-button:active {
+    background-image: url(../images/hover-like-icon.svg);
+  }
+  .basket__element-delete-button:active {
+    background-image: url(../images/hover-delete-icon.svg);
+  }
 }
 
 @media screen and (max-width: 1240px) {

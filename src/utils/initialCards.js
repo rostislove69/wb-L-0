@@ -3,7 +3,7 @@ export const cards = [{
   link: "https://www.wildberries.ru/catalog/54192797/detail.aspx",
   colour: "белый",
   size: "56",
-  image: "./images/t-shirt.png",
+  image: "https://i.ibb.co/r3JcKR7/t-shirt.png",
   stock: "Коледино WB",
   provider: {
     name: "ООО Вайлдберриз",
@@ -19,7 +19,7 @@ export const cards = [{
   name: "Силиконовый чехол кардхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
   link: "https://www.wildberries.ru/catalog/137598338/detail.aspx",
   colour: "прозрачный",
-  image: "./images/iphone-case.png",
+  image: "https://i.ibb.co/dp1PWBG/iphone-case.png" ,
   stock: "Коледино WB",
   provider: {
     name: "OOO Мегапрофстиль",
@@ -33,7 +33,7 @@ export const cards = [{
 },{
   name: "Карандаши цветные Faber-Castell 'Замок', набор 24 цвета, заточенные, шестигранные, Faber-Castell",
   link: "https://www.wildberries.ru/catalog/3544425/detail.aspx",
-  image: "./images/colour-pencils.png",
+  image: "https://i.ibb.co/hW5G2qF/colour-pencils.png" ,
   stock: "Коледино WB",
   provider: {
     name: "ООО Вайлдберриз",
@@ -50,7 +50,7 @@ export const cards = [{
   link: "https://www.wildberries.ru/catalog/54192797/detail.aspx",
   colour: "белый",
   size: "56",
-  image: "./images/t-shirt.png",
+  image: "https://i.ibb.co/r3JcKR7/t-shirt.png",
   stock: "Коледино WB",
   provider: {
     name: "ООО Вайлдберриз",
@@ -66,7 +66,7 @@ export const cards = [{
   name: "Силиконовый чехол кардхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
   link: "https://www.wildberries.ru/catalog/137598338/detail.aspx",
   colour: "прозрачный",
-  image: "./images/iphone-case.png",
+  image: "https://i.ibb.co/dp1PWBG/iphone-case.png" ,
   stock: "Коледино WB",
   provider: {
     name: "OOO Мегапрофстиль",
@@ -80,7 +80,7 @@ export const cards = [{
 },{
   name: "Карандаши цветные Faber-Castell 'Замок', набор 24 цвета, заточенные, шестигранные, Faber-Castell",
   link: "https://www.wildberries.ru/catalog/3544425/detail.aspx",
-  image: "./images/colour-pencils.png",
+  image: "https://i.ibb.co/hW5G2qF/colour-pencils.png" ,
   stock: "Коледино WB",
   provider: {
     name: "ООО Вайлдберриз",

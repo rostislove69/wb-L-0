@@ -140,10 +140,6 @@
   cursor: pointer;
 }
 
-.missing-items__element-like-button:hover {
-  background-image: url(../images/hover-like-icon.svg);
-}
-
 .missing-items__element-like-button-active {
   background-image: url(../images/hover-like-icon.svg);
 }
@@ -160,8 +156,22 @@
   cursor: pointer;
 }
 
-.missing-items__element-delete-button:hover {
-  background-image: url(../images/hover-delete-icon.svg);
+@media (hover: hover) {
+  .missing-items__element-like-button:hover {
+    background-image: url(../images/hover-like-icon.svg);
+  }
+  .missing-items__element-delete-button:hover {
+    background-image: url(../images/hover-delete-icon.svg);
+  }
+}
+
+@media (hover: none) {
+  .missing-items__element-like-button:active {
+    background-image: url(../images/hover-like-icon.svg);
+  }
+  .missing-items__element-delete-button:active {
+    background-image: url(../images/hover-delete-icon.svg);
+  }
 }
 
 @media screen and (max-width: 1240px) {
