@@ -14,7 +14,7 @@ export const cards = [{
   newPrice: 522,
   currency: "сом",
   remainder: "2",
-  inStock: true
+  inStock: true,
 },{
   name: "Силиконовый чехол кардхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
   link: "https://www.wildberries.ru/catalog/137598338/detail.aspx",
@@ -29,7 +29,7 @@ export const cards = [{
   oldPrice: 11500,
   newPrice: 10350,
   currency: "сом",
-  inStock: true
+  inStock: true,
 },{
   name: "Карандаши цветные Faber-Castell 'Замок', набор 24 цвета, заточенные, шестигранные, Faber-Castell",
   link: "https://www.wildberries.ru/catalog/3544425/detail.aspx",
@@ -44,7 +44,7 @@ export const cards = [{
   newPrice: 247,
   currency: "сом",
   remainder: "2",
-  inStock: true
+  inStock: true,
 },{
   name: "Футболка UZcotton мужская",
   link: "https://www.wildberries.ru/catalog/54192797/detail.aspx",
@@ -61,7 +61,7 @@ export const cards = [{
   newPrice: 522,
   currency: "сом",
   remainder: "2",
-  inStock: false
+  inStock: false,
 },{
   name: "Силиконовый чехол кардхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
   link: "https://www.wildberries.ru/catalog/137598338/detail.aspx",
@@ -76,7 +76,7 @@ export const cards = [{
   oldPrice: 11500,
   newPrice: 10350,
   currency: "сом",
-  inStock: false
+  inStock: false,
 },{
   name: "Карандаши цветные Faber-Castell 'Замок', набор 24 цвета, заточенные, шестигранные, Faber-Castell",
   link: "https://www.wildberries.ru/catalog/3544425/detail.aspx",
@@ -91,5 +91,5 @@ export const cards = [{
   newPrice: 494,
   currency: "сом",
   remainder: "2",
-  inStock: false
+  inStock: false,
 }]

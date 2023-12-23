@@ -2,7 +2,7 @@
   font-family: "Segoe UI";
   src:
     url("./SegoeUIRegular.ttf") format("woff"),
-    url("./SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
+    url("./SegoeUIRegular.ttf") format("truetype");
   font-weight: 400;
 }
 

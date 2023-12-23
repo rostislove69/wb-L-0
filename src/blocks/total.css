@@ -88,11 +88,9 @@
   font-size: 13px;
   color: #cb11ab;
   border-bottom: 1px rgba(0, 0, 0, 0.1) dashed;
-  cursor: pointer;
 }
 
 .total__delivery-conditions-container {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -103,6 +101,7 @@
 }
 
 .total__delivery-conditions {
+  position: relative;
   font-size: 13px;
   margin-left: -1px;
 }
@@ -112,26 +111,30 @@
   border-bottom: 1px rgba(0, 0, 0, 0.1) dashed;
 }
 
-.total__delivery-conditions-info{
+.total__delivery-conditions-hidden-text{
   display: none;
-  font-size: 13px;
   padding: 10px;
   position: absolute;
+  line-height: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
   background-color: white;
   border-radius: 10px;
   width: 280px;
-  bottom: -50px;
+  top: 45px;
+  left: 0px;
   z-index: 100;
   border: 1px rgba(0, 0, 0, 0.1) solid;
   box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.total__delivery-conditions-span:hover {
-  cursor: pointer;
+.total__delivery-conditions-span:hover ~ .total__delivery-conditions-hidden-text{
+  display: block;
 }
 
-.total__delivery-conditions-info:has(~ .total__delivery-conditions-span:hover){
-  display: block;
+.total__delivery-conditions-span:hover {
+  cursor: pointer;
 }
 
 .total__payment-container {
@@ -240,6 +243,10 @@
   .total__agreement {
     width: 210px;
   }
+
+  .total__delivery-conditions-hidden-text{
+    left: -50px;
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -266,6 +273,11 @@
 
   .total__payment-condition-container {
     background-color: #f0ecf4;
+  }
+
+  .total__delivery-conditions-hidden-text{
+    top: 25px;
+    left: 190px;
   }
 }
 
@@ -306,6 +318,14 @@
 
   .total__delivery-conditions{
     margin: 0;
+  }
+
+  .total__delivery-conditions-span:hover{
+    cursor: text;
+  }
+
+  .total__delivery-conditions-span:hover ~ .total__delivery-conditions-hidden-text{
+    display: none;
   }
 
   .total__delivery-header {

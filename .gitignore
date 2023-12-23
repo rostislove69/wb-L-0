@@ -1,1 +1,8 @@
 node_modules
+.nojekyll
+babel.config.js
+dist/
+package-lock.json
+package.json
+postcss.config.js
+webpack.config.js

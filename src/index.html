@@ -82,7 +82,7 @@
             </div>
             <div class="delivery__delivery-date-container">
               <span class="delivery__date">5—6 февраля</span>
-              <ul class="delivery__date-items-container">
+              <ul class="delivery__date-items-container delivery__date-items-container_hide">
                 <li class="delivery__date-item-container">
                   <img class="delivery__date-item" src="./images/t-shirt.png">
                   <span class="delivery__date-item-span">1</span>
@@ -99,18 +99,21 @@
             </div>
             <div class="delivery__delivery-date-container-late">
               <span class="delivery__date">7—8 февраля</span>
-              <div class="delivery__date-items-container">
-                <div class="delivery__date-item-container">
+              <ul class="delivery__date-items-container">
+                <li class="delivery__date-item-container">
                   <img class="delivery__date-item" src="./images/iphone-case.png">
                   <span class="delivery__date-item-span">16</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
             <div class="delivery__return-conditions-container">
               <p class="check-mark-icon"></p>
               <p class="delivery__return-conditions">
                 Обратная доставка товаров на склад при отказе — 
                 <span class="delivery__return-conditions-span">бесплатно</span>
+                <span class="delivery__return-conditions-hidden-text">
+                  Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                </span>
               </p>
             </div>
           </section>
@@ -192,9 +195,13 @@
                 <span class="total__delivery-date">5–8 фев</span>
               </div>
               <div class="total__delivery-conditions-container">
-                <p class="total__delivery-conditions-info">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</p>
                 <p class="check-mark-icon"></p>
-                <p class="total__delivery-conditions">Обратная доставка товаров на склад при отказе — <span class="total__delivery-conditions-span">бесплатно</span></p>
+                <p class="total__delivery-conditions">Обратная доставка товаров на склад при отказе — 
+                  <span class="total__delivery-conditions-span">бесплатно</span>
+                  <span class="total__delivery-conditions-hidden-text">
+                    Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                  </span>
+                </p>
               </div>
             </div>
             <div class="total__payment-container">
@@ -278,6 +285,7 @@
                     min="1"
                     max="999"
                     value="1"
+                    readonly
                   />
                   <button class="basket__element-increase-button"></button>
                 </div>

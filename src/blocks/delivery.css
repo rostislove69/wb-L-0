@@ -143,6 +143,7 @@
 
 .delivery__return-conditions-container {
   display: flex;
+  align-items: center;
   margin: 26px 0 0 23px;
   padding-bottom: 20px;
 }
@@ -150,14 +151,15 @@
 .check-mark-icon {
   background-image: url(../images/check-mark.svg);
   background-repeat: no-repeat;
-  min-width: 25px;
-  height: 25px;
-  margin-right: 5px;
+  min-width: 22px;
+  height: 22px;
+  margin-right: 8px;
 }
 
 .delivery__return-conditions {
   font-size: 13px;
-  line-height: 23px;
+  line-height: 16px;
+  position: relative;
 }
 
 .delivery__return-conditions-span {
@@ -168,6 +170,28 @@
 
 .delivery__return-conditions-span:hover {
   cursor: pointer;
+}
+
+.delivery__return-conditions-hidden-text{
+  display: none;
+  padding: 10px;
+  position: absolute;
+  line-height: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  background-color: white;
+  border-radius: 10px;
+  width: 280px;
+  top: 25px;
+  right: -110px;
+  z-index: 100;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.delivery__return-conditions-span:hover ~ .delivery__return-conditions-hidden-text{
+  display: block;
 }
 
 @media screen and (max-width: 1240px) {
@@ -254,5 +278,13 @@
 
   .delivery__return-conditions {
     line-height: 16px;
+  }
+
+  .delivery__return-conditions-span:hover{
+    cursor: text;
+  }
+
+  .delivery__return-conditions-span:hover ~ .delivery__return-conditions-hidden-text{
+    display: none;
   }
 }

@@ -82,7 +82,7 @@ paymentPopup.submitButton().addEventListener("click", () => {
   paymentPopup.close();
 })
 
-// Функция разбития чисел на части потри цифры
+// Функция разбития чисел на части по три цифры
 function splitNumber(number) {
   const numberString = number.toString();
   const splitted = [];
@@ -196,6 +196,7 @@ const changePrice = () => {
   }
  }
 
+ // Функция изменения количества избранных товаров
  const changeAmountFavorites = (action) => {
   const mobileFavoriteCounter = document.querySelector(".mobile-menu__favorite-counter");
   if(action === "add"){
@@ -265,6 +266,15 @@ changeAmountGoods();
 changePrice();
 changeAmountMissingGoods();
 changeAmountFavorites();
+
+const updateDeliveryInfo = () => {
+  const cardElement = document
+      .querySelector("#element")
+      .content
+      .querySelector(".delivery__date-item-container")
+      .cloneNode(true);
+  
+}
 
 // Слушатель кнопки "Выбрать все"
 chooseAllCards.addEventListener("click", () => {
